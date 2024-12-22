@@ -7,12 +7,6 @@
 #include <stdlib.h>
 #include <stdbool.h>
 
-/* MACROS */
-
-#define NUM_ENGLISH_LETTERS 26
-#define LETTER_TO_INDEX(letter) (unsigned) (letter - 'a')
-#define INDEX_TO_LETTER(index) (char) (index + 'a')
-
 /* TYPEDEFS AND STRUCTS */
 
 typedef struct trie_node_struct trie_node;
@@ -29,6 +23,12 @@ struct trie_struct
     trie_node *root;
     size_t word_count;
 };
+
+/* MACROS */
+
+#define NUM_ENGLISH_LETTERS 26
+#define LETTER_TO_INDEX(letter) (unsigned) (letter - 'a')
+#define INDEX_TO_LETTER(index) (char) (index + 'a')
 
 /* FUNCTION DECLARATIONS */
 
