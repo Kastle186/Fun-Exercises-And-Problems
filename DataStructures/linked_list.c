@@ -6,7 +6,7 @@
 
 linked_list *create_new_linked_list()
 {
-    linked_list *new_list_obj = malloc(sizeof(linked_list));
+    linked_list *new_list_obj = (linked_list *) malloc(sizeof(linked_list));
     new_list_obj->head = NULL;
     new_list_obj->tail = NULL;
     new_list_obj->size = 0;
@@ -57,7 +57,7 @@ void delete_list(linked_list *list)
 
 list_node *create_new_node(void *data, size_t type_size)
 {
-    list_node *new_node = malloc(sizeof(list_node));
+    list_node *new_node = (list_node *) malloc(sizeof(list_node));
 
     // Allocate memory for the data's pointer and initialize its next and previous
     // pointers to NULL.
