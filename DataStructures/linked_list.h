@@ -28,14 +28,19 @@ struct linked_list_struct
 
 /* FUNCTION DECLARATIONS */
 
+// Public Functions
+
 linked_list *create_new_linked_list(void);
+void print_forward(linked_list *, void (*)(void *));
+void print_backward(linked_list *, void (*)(void *));
+void delete_list(linked_list *);
+
+// Private Functions
+
 list_node *create_new_node(void *, size_t);
 void append_to_list(linked_list *, void *, size_t);
 void prepend_to_list(linked_list *, void *, size_t);
 bool insert_to_list(linked_list *, int, void *, size_t);
-void print_forward(linked_list *, void (*)(void *));
-void print_backward(linked_list *, void (*)(void *));
-void delete_list(linked_list *);
 
 /* FUNCTION MACROS */
 

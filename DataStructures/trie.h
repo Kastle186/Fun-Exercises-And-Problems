@@ -32,13 +32,18 @@ struct trie_struct
 
 /* FUNCTION DECLARATIONS */
 
+// Public Functions
+
 trie *create_new_trie(void);
-trie_node *create_new_node(void);
 void insert_word(trie *, const char *);
 bool search_word(const trie *, const char *);
 void print_trie(const trie *);
-void print_node(const trie_node *);
 void delete_trie(trie *);
+
+// Private Functions
+
+trie_node *create_new_node(void);
+void print_node(const trie_node *);
 void delete_node(trie_node *);
 
 #endif // C_DATA_STRUCTURES_TRIE_H

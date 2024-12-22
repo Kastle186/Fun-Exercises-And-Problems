@@ -1,5 +1,9 @@
 #include "linked_list.h"
 
+/********************/
+/* PUBLIC FUNCTIONS */
+/********************/
+
 linked_list *create_new_linked_list()
 {
     linked_list *new_list_obj = malloc(sizeof(linked_list));
@@ -8,6 +12,48 @@ linked_list *create_new_linked_list()
     new_list_obj->size = 0;
     return new_list_obj;
 }
+
+
+void print_forward(linked_list *list, void (*fptr)(void *))
+{
+    list_node *iter = list->head;
+
+    while (iter != NULL)
+    {
+        (*fptr)(iter->data);
+        iter = iter->next;
+    }
+}
+
+void print_backward(linked_list *list, void (*fptr)(void *))
+{
+    list_node *iter = list->tail;
+
+    while (iter != NULL)
+    {
+        (*fptr)(iter->data);
+        iter = iter->prev;
+    }
+}
+
+void delete_list(linked_list *list)
+{
+    list_node *curr = list->head;
+
+    while (curr->next !=  NULL)
+    {
+        list_node *next = curr->next;
+        free(curr);
+        curr = next;
+    }
+
+    free(curr);
+    free(list);
+}
+
+/*********************/
+/* PRIVATE FUNCTIONS */
+/*********************/
 
 list_node *create_new_node(void *data, size_t type_size)
 {
@@ -107,41 +153,4 @@ bool insert_to_list(linked_list *list, int index, void *data, size_t type_size)
     }
 
     return true;
-}
-
-void print_forward(linked_list *list, void (*fptr)(void *))
-{
-    list_node *iter = list->head;
-
-    while (iter != NULL)
-    {
-        (*fptr)(iter->data);
-        iter = iter->next;
-    }
-}
-
-void print_backward(linked_list *list, void (*fptr)(void *))
-{
-    list_node *iter = list->tail;
-
-    while (iter != NULL)
-    {
-        (*fptr)(iter->data);
-        iter = iter->prev;
-    }
-}
-
-void delete_list(linked_list *list)
-{
-    list_node *curr = list->head;
-
-    while (curr->next !=  NULL)
-    {
-        list_node *next = curr->next;
-        free(curr);
-        curr = next;
-    }
-
-    free(curr);
-    free(list);
 }

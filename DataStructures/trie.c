@@ -1,23 +1,15 @@
 #include "trie.h"
 
+/********************/
+/* PUBLIC FUNCTIONS */
+/********************/
+
 trie *create_new_trie()
 {
     trie *trie_obj = (trie *) malloc(sizeof(trie));
     trie_obj->root = create_new_node();
     trie_obj->word_count = 0;
     return trie_obj;
-}
-
-trie_node *create_new_node()
-{
-    trie_node *node = (trie_node *) malloc(sizeof(trie_node));
-    node->is_word_end = false;
-
-    // Set all of the letter pointers of this node to NULL for additional safety.
-    for (int i = 0; i < NUM_ENGLISH_LETTERS; i++)
-        node->children[i] = NULL;
-
-    return node;
 }
 
 void insert_word(trie *trie_obj, const char *word)
@@ -80,6 +72,28 @@ void print_trie(const trie *trie_obj)
     print_node(root);
 }
 
+void delete_trie(trie *trie_obj)
+{
+    delete_node(trie_obj->root);
+    free(trie_obj);
+}
+
+/*********************/
+/* PRIVATE FUNCTIONS */
+/*********************/
+
+trie_node *create_new_node()
+{
+    trie_node *node = (trie_node *) malloc(sizeof(trie_node));
+    node->is_word_end = false;
+
+    // Set all of the letter pointers of this node to NULL for additional safety.
+    for (int i = 0; i < NUM_ENGLISH_LETTERS; i++)
+        node->children[i] = NULL;
+
+    return node;
+}
+
 void print_node(const trie_node *node)
 {
     printf("\n*****************\n");
@@ -104,12 +118,6 @@ void print_node(const trie_node *node)
         if (child_node != NULL)
             print_node(child_node);
     }
-}
-
-void delete_trie(trie *trie_obj)
-{
-    delete_node(trie_obj->root);
-    free(trie_obj);
 }
 
 void delete_node(trie_node *node)
