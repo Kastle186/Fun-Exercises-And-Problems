@@ -45,13 +45,13 @@ void delete_from_heap(heap *, void *);
 
 /* FUNCTION MACROS */
 
-#define INSERT_TO_HEAP(heap, value, type)                                 \
-    {                                                                     \
-        type insert_temp = value;                                         \
-        insert_to_heap(heap, (void *) &insert_temp); \
+#define INSERT_TO_HEAP(heap, value, type)               \
+    {                                                   \
+        type insert_temp = value;                       \
+        insert_to_heap(heap, (void *) &insert_temp);    \
     }
 
-#define DELETE_FROM_HEAP(heap, value)                   \
+#define DELETE_FROM_HEAP(heap, value, type)             \
     {                                                   \
         type delete_temp = value;                       \
         delete_from_heap(heap, (void *) &delete_temp);  \
