@@ -3,7 +3,9 @@
 
 /* INCLUDES */
 
+#include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 /* TYPEDEFS, STRUCTS, AND ENUMS */
 
@@ -32,14 +34,14 @@ struct rb_tree_node_struct
     rb_tree_node *left;
     rb_tree_node *right;
     rb_color color;
-    size_t type_size;
-    int (*comp_fun)(void *, void *);
 };
 
 struct red_black_tree_struct
 {
     rb_tree_node *root;
     size_t size;
+    size_t type_size;
+    int (*comp_fun)(void *, void *);
 };
 
 /* FUNCTION DECLARATIONS */
