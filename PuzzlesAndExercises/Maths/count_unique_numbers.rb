@@ -23,7 +23,7 @@ end
 
 
 def count_unique_numbers(limit_digits)
-  return -1 if limit_digits > 9
+  return -1 if limit_digits > 10
   result = 1
 
   until limit_digits.zero?
