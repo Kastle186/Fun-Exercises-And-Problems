@@ -24,12 +24,12 @@ def plus_minus(arr)
 end
 
 # Available Test Cases:
-#
+
 # Input: [-4, 3, -9, 0, 4, 1]
 # Output: 0.500000
 #         0.333333
 #         0.166667
-#
+
 # Input: [1, 2, 3, -1, -2, -3, 0, 0]
 # Output: 0.375000
 #         0.375000
