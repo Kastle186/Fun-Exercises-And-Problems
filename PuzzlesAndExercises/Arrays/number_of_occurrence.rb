@@ -20,6 +20,7 @@ def main
   end
 end
 
+
 def count_freq(arr, target)
   # No need to even start looking if either our array is empty, or the target
   # would be out of bounds.
