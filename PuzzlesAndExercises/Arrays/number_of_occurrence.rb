@@ -6,7 +6,10 @@ def main
   test_cases = [
     TestCase.new([1, 1, 2, 2, 2, 2, 3], 2, 4),
     TestCase.new([1, 1, 2, 2, 2, 2, 3], 4, 0),
-    TestCase.new([8, 9, 10, 12, 12, 12], 12, 3)
+    TestCase.new([8, 9, 10, 12, 12, 12], 12, 3),
+    TestCase.new([4, 4, 8, 8, 8, 15, 16, 23, 23, 42], 8, 3),
+    TestCase.new([3, 5, 5, 5, 5, 7, 8, 8], 6, 0),
+    TestCase.new([3, 5, 5, 5, 5, 7, 8, 8], 5, 4)
   ]
 
   test_cases.each_with_index do |t, i|
@@ -56,7 +59,7 @@ def count_freq(arr, target)
 end
 
 def find_target_index(arr, target)
-  return -1 if arr.empty? or (arr.length == 1 and arr[0] != target)
+  return -1 if arr.empty? or arr[0] > target or arr[-1] < target
 
   middle = arr.length / 2
 
