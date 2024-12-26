@@ -26,6 +26,3 @@ end
 #
 # Input: 07:05:45PM
 # Output: 19:05:45
-#
-# Input:
-# Output:
