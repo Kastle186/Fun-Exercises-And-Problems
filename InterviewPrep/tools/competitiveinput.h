@@ -10,6 +10,8 @@
 char *readline();
 char *ltrim(char *);
 char *rtrim(char *);
+char **split_string(char *);
 int parse_int(char *);
+long parse_long(char *);
 
 #endif // _COMPETITIVE_PROGRAMMING_INPUT_

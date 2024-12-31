@@ -80,10 +80,41 @@ char* rtrim(char* str)
     return str;
 }
 
-int parse_int(char* str)
+char **split_string(char *str)
+{
+    char **splits = NULL;
+    char *token = strtok(str, " ");
+    int spaces = 0;
+
+    while (token)
+    {
+        splits = realloc(splits, sizeof(char *) * ++spaces);
+
+        if (!splits)
+            return splits;
+
+        splits[spaces - 1] = token;
+        token = strtok(NULL, " ");
+    }
+
+    return splits;
+}
+
+int parse_int(char *str)
 {
     char* endptr;
     int value = strtol(str, &endptr, 10);
+
+    if (endptr == str || *endptr != '\0')
+        exit(EXIT_FAILURE);
+
+    return value;
+}
+
+long parse_long(char *str)
+{
+    char *endptr;
+    long value = strtol(str, &endptr, 10);
 
     if (endptr == str || *endptr != '\0')
         exit(EXIT_FAILURE);
