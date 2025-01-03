@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "tools/competitiveinput.h"
+#include "tools/hackerrank.h"
 
 int birthday(int, int *, int, int);
 

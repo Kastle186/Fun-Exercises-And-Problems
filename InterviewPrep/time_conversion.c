@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-#include "tools/competitiveinput.h"
+#include "tools/hackerrank.h"
 
 char *time_conversion(char *);
 

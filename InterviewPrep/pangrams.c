@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
-#include "tools/competitiveinput.h"
+#include "tools/hackerrank.h"
 
 #define ENGLISH_ALPHABET 26
 #define BIT_ARRAY_FULL 67108863

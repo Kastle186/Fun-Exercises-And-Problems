@@ -1,4 +1,4 @@
-#include "competitiveinput.h"
+#include "hackerrank.h"
 
 char *readline()
 {

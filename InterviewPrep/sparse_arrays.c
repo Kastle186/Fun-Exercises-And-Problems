@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "tools/competitiveinput.h"
+#include "tools/hackerrank.h"
 
 int *matching_strings(int, char **, int, char **, int *);
 

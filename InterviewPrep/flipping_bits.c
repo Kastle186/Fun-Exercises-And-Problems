@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "tools/competitiveinput.h"
+#include "tools/hackerrank.h"
 
 #define NUM_BITS 32
 

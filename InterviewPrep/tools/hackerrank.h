@@ -1,5 +1,5 @@
-#ifndef _COMPETITIVE_PROGRAMMING_INPUT_
-#define _COMPETITIVE_PROGRAMMING_INPUT_
+#ifndef _HACKERRANK_H_
+#define _HACKERRANK_H_
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -14,4 +14,4 @@ char **split_string(char *);
 int parse_int(char *);
 long parse_long(char *);
 
-#endif // _COMPETITIVE_PROGRAMMING_INPUT_
+#endif // _HACKERRANK_H__

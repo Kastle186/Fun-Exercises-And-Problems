@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "tools/competitiveinput.h"
+#include "tools/hackerrank.h"
 
 int *counting_sort(int, int *, int *);
 
