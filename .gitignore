@@ -2,3 +2,6 @@
 *.out
 *.beam
 *.in
+
+**/obj/*
+**/out/*
