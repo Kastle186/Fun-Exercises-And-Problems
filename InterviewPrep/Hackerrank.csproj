@@ -8,6 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="DynamicArray.cs" />
+    <Compile Include="GridChallenge.cs" />
   </ItemGroup>
 </Project>
