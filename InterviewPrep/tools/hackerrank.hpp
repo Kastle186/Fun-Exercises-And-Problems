@@ -1,7 +1,7 @@
 #ifndef _HACKERRANK_HPP_
 #define _HACKERRANK_HPP_
 
-#include <bits/stdc++.h>
+#include <iostream>
 
 std::string ltrim(const std::string &);
 std::string rtrim(const std::string &);
