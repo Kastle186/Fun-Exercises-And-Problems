@@ -8,6 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="GridChallenge.cs" />
+    <Compile Include="RecursiveDigitSum.cs" />
   </ItemGroup>
 </Project>
