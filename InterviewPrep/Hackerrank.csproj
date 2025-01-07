@@ -8,6 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="RecursiveDigitSum.cs" />
+    <Compile Include="ClimbingTheLeaderboard.cs" />
   </ItemGroup>
 </Project>
