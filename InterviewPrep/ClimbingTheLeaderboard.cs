@@ -14,7 +14,6 @@ class Result
 
         List<int> uniqRanks = ranked.Distinct().ToList();
         List<int> newRanks = new List<int>();
-        // Console.WriteLine($"\nUNIQUE: [{string.Join(", ", uniqRanks)}]");
 
         // Next, we will do a small variant of Binary Search to find the index
         // where this score would go in the rankings.
@@ -28,7 +27,6 @@ class Result
             }
 
             int scoreRank = BinarySearchIndex(uniqRanks, score, 0, uniqRanks.Count - 1);
-            // Console.WriteLine($"{scoreRank} - {score}");
             newRanks.Add(scoreRank);
         }
 
@@ -41,16 +39,10 @@ class Result
         int chunkStart,
         int chunkEnd)
     {
-        // Console.WriteLine($"\nSCORE: {playerScore}");
-        // Console.WriteLine($"START: {chunkStart}");
-        // Console.WriteLine($"END: {chunkEnd}");
-
         int chunkSize = chunkEnd - chunkStart + 1;
-        // Console.WriteLine($"SIZE: {chunkSize}");
 
         if (chunkSize == 1)
         {
-            // Console.WriteLine("SIZE WAS 1! RETURNING!");
             return playerScore >= rankedScores[chunkStart]
                 ? chunkStart + 1
                 : chunkStart + 2;
@@ -61,27 +53,19 @@ class Result
 
         if (chunkSize == 2)
         {
-            // Console.WriteLine("SIZE WAS 2!");
-
             int first = rankedScores[chunkStart];
             int second = rankedScores[chunkEnd];
 
-            // Console.WriteLine($"FIRST: {first}");
-            // Console.WriteLine($"SECOND: {second}");
-
             if (playerScore >= first)
             {
-                // Console.WriteLine($"SCORE GREATER OR EQUAL!");
                 return chunkStart + 1;
             }
             else if (playerScore < first && playerScore >= second)
             {
-                // Console.WriteLine($"SCORE IN THE MIDDLE!");
                 return chunkStart + 2;
             }
             else
             {
-                // Console.WriteLine($"SCORE LESS THAN!");
                 return chunkStart + 3;
             }
         }
@@ -89,22 +73,16 @@ class Result
         int chunkMid = chunkStart + (chunkSize / 2);
         int testScore = rankedScores[chunkMid];
 
-        // Console.WriteLine($"MID: {chunkMid}");
-        // Console.WriteLine($"TEST: {testScore}");
-
         if (playerScore == testScore)
         {
-            // Console.WriteLine($"FOUND MATCH! RETURNING {chunkMid + 1}");
             return chunkMid + 1;
         }
 
         if (playerScore > testScore)
         {
-            // Console.WriteLine("RECURSING INTO FIRST HALF!");
             return BinarySearchIndex(rankedScores, playerScore, chunkStart, chunkMid);
         }
 
-        // Console.WriteLine("RECURSING INTO SECOND HALF!");
         return BinarySearchIndex(rankedScores, playerScore, chunkMid, chunkEnd);
     }
 }
