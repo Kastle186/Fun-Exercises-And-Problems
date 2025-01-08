@@ -3,9 +3,7 @@
 #include "tools/hackerrank.hpp"
 
 std::vector<int> waiter(std::vector<int>, int);
-void initSieve(int);
-
-std::vector<int> sieve_of_erastothenes;
+std::vector<int> init_sieve(int);
 
 int main(void)
 {
@@ -30,8 +28,6 @@ int main(void)
         number[i] = number_item;
     }
 
-    // We can potentially need up to the 1200th prime, and that number is 9733.
-    initSieve(9734);
     std::vector<int> result = waiter(number, q);
 
     for (size_t i = 0; i < result.size(); i++)
@@ -50,6 +46,7 @@ std::vector<int> waiter(std::vector<int> plates, int q)
     // the answers list, in order to not have to create multiple lists for each
     // iteration. Instead, only go gradually cleaning up the one we were given.
 
+    std::vector<int> sieve_of_erastothenes = init_sieve(q);
     std::vector<int> answers;
 
     for (int i = 0; i < q; i++)
@@ -73,16 +70,27 @@ std::vector<int> waiter(std::vector<int> plates, int q)
     return answers;
 }
 
-void initSieve(int limit)
+std::vector<int> init_sieve(int num_primes)
 {
+    std::vector<int> sieve_of_erastothenes {2};
+
+    // No need to try to go through the whole algorithm if we only need one prime.
+    if (num_primes == 1)
+        return sieve_of_erastothenes;
+
     // First, we create a list of flags to go crossing out the numbers we discover
-    // are not prime.
+    // are not prime. We can potentially be asked up to the 1200th prime number,
+    // which is 9733. However, we will keep a counter to only process the amount
+    // of primes we are requested for the sake of efficiency.
+
+    int limit = 9733;
     std::vector<bool> prime(limit + 1, true);
 
     // We can do a small optimization here. We know that by definition, all even
     // numbers are not prime, as they are divisible by 2. So, we can skip them
     // entirely when creating our sieve.
-    for (int i = 3; i * i <= limit; i += 2)
+
+    for (int i = 3, primes_count = 1; primes_count <= num_primes; i += 2)
     {
         if (!prime[i])
             continue;
@@ -91,18 +99,23 @@ void initSieve(int limit)
         // than its square as non-prime. Starting at its square is another small
         // optimization we can make, as by definition, all numbers less than this
         // square have already been passed and marked in previous iterations.
+
         for (int j = i * i; j <= limit; j += i)
             prime[j] = false;
+
+        primes_count++;
     }
 
     // And finally, we transfer the results to our final sieve object.
-    sieve_of_erastothenes.push_back(2);
 
-    for (int k = 3; k <= limit; k += 2)
+    for (int k = 3, primes_count = 1; primes_count <= num_primes; k += 2)
     {
         if (!prime[k])
             continue;
 
         sieve_of_erastothenes.push_back(k);
+        primes_count++;
     }
+
+    return sieve_of_erastothenes;
 }
