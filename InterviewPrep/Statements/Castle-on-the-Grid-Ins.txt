@@ -1,0 +1,5 @@
+3           grid[] size n = 3
+.X.         grid = ['.X.','.X.', '...']
+.X.
+...
+0 0 0 2     startX = 0, startY = 0, goalX = 0, goalY = 2
