@@ -8,6 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="ClimbingTheLeaderboard.cs" />
+    <Compile Include="QueueUsingTwoStacks.cs" />
   </ItemGroup>
 </Project>
