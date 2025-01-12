@@ -1,9 +1,20 @@
 #include <iostream>
+#include <algorithm>
 #include <vector>
 #include "tools/hackerrank.hpp"
 
 std::vector<int> waiter(std::vector<int>, int);
 std::vector<int> init_sieve(int);
+
+void print_vec(std::vector<int> vec, std::string label)
+{
+    std::cout << label << ":";
+    for (int elem : vec)
+    {
+        std::cout << " " << elem;
+    }
+    std::cout << std::endl;
+}
 
 int main(void)
 {
@@ -42,12 +53,16 @@ std::vector<int> waiter(std::vector<int> plates, int q)
 {
     // To solve this problem, we iterate through the first q prime numbers from
     // our sieve. Then, iterate the plates list to check which ones are evenly
-    // divisible by each of these primes. We then delete them as we add them to
-    // the answers list, in order to not have to create multiple lists for each
-    // iteration. Instead, only go gradually cleaning up the one we were given.
+    // divisible by each of these primes. I tried deleting them as we added them
+    // to the answers list to be more memory efficient, but stupid Hackerrank
+    // trick explanation had a hidden detail that invalidated this optimization.
+    //
+    // So instead, we have to end up using an auxiliary list to move the plates
+    // that are not divisible by the given prime, in a stack-like fashion.
 
     std::vector<int> sieve_of_erastothenes = init_sieve(q);
     std::vector<int> answers;
+    std::vector<int> helper;
 
     for (int i = 0; i < q; i++)
     {
@@ -57,15 +72,24 @@ std::vector<int> waiter(std::vector<int> plates, int q)
         {
             int plate = plates[j];
 
-            if (plate % prime != 0)
-                continue;
-
-            answers.push_back(plate);
-            plates.erase(plates.begin() + j);
+            if (plate % prime == 0)
+                answers.push_back(plate);
+            else
+            {
+                // Another Hackerrank cheating detail. The last iteration has to
+                // keep the remaining untouched plates in the same order, rather
+                // than inverting them in a stack-like fashion...
+                if (i == q - 1)
+                    helper.push_back(plate);
+                else
+                    helper.emplace(helper.begin(), plate);
+            }
         }
+
+        plates = helper;
+        helper.clear();
     }
 
-    // Append the plates that were not divisible by any of the primes we passed by.
     answers.insert(answers.end(), plates.begin(), plates.end());
     return answers;
 }
