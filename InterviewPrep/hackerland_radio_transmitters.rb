@@ -20,14 +20,20 @@ def hackerland_radio_transmitters(houses, t_range)
   return 1 if houses.length == 1
 
   index = 0
-  full_range = t_range * 2
   transmitters = 0
 
   while index < houses.length
-    next_house = houses[index] + full_range
-    transmitters += 1
+    next_half = houses[index] + t_range
 
-    while index < houses.length and houses[index] <= next_house
+    while index < houses.length and houses[index] <= next_half
+      index += 1
+    end
+
+    index -= 1
+    transmitters += 1
+    next_half = houses[index] + t_range
+
+    while index < houses.length and houses[index] <= next_half
       index += 1
     end
   end
