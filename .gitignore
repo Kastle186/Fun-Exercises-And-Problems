@@ -2,8 +2,5 @@
 *.out
 *.beam
 *.in
-
-**/obj/*
-**/out/*
-
+*.txt
 .DS_Store
