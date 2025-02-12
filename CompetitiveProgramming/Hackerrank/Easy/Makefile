@@ -1,6 +1,6 @@
 CC = gcc
 CCP = g++
-INCLUDE = ../../Tools
+INCLUDE = ../Tools
 DEPS_C = $(INCLUDE)/hackerrank.c
 DEPS_CPP = $(INCLUDE)/hackerrank.cpp
 
