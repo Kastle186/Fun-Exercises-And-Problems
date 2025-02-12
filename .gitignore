@@ -1,3 +1,16 @@
+##### Ignore all files without extension (mainly Unix executables) #####
+
+# Ignore all
+*
+
+# Unignore all with extensions
+!*.*
+
+# Unignore all dirs
+!*/
+
+##### Files with extension that ought not be staged #####
+
 *.exe
 *.out
 *.beam
