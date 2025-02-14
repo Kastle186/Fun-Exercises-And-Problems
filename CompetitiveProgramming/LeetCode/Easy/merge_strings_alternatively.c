@@ -1,6 +1,8 @@
 // Name: 1768. Merge Strings Alternatively
 // Topics: Two Pointers, String
-// Companies: Wells Fargo, Zoho
+// Companies:
+// - Wells Fargo
+// - Zoho
 
 #include <stdio.h>
 #include <stdlib.h>
