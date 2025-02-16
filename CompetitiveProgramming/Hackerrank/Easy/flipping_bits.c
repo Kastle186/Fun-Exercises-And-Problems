@@ -1,5 +1,8 @@
+// Name: Flipping Bits
+// Topics: Algorithms, Bit Manipulation
+
 #include <stdio.h>
-#include "tools/hackerrank.h"
+#include <hackerrank.h>
 
 #define NUM_BITS 32
 

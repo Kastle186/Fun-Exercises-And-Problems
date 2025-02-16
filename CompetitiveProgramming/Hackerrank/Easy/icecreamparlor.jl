@@ -1,3 +1,6 @@
+# Name: Ice Cream Parlor
+# Topics: Algorithms, Search
+
 #!/usr/bin/env julia
 
 function main()

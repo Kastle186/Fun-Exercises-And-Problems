@@ -1,8 +1,11 @@
+// Name: Lily's Homework
+// Topics: Algorithms, Sorting
+
 #include <iostream>
 #include <algorithm>
 #include <functional>
 #include <map>
-#include "tools/hackerrank.hpp"
+#include <hackerrank.hpp>
 
 int lilys_homework(std::vector<int>);
 int beautifier(std::vector<int>, bool);
