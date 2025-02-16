@@ -1,6 +1,9 @@
+// Name: Diagonal Difference
+// Topics: Algorithms, Warmup
+
 #include <stdio.h>
 #include <stdlib.h>
-#include "tools/hackerrank.h"
+#include <hackerrank.h>
 
 int diagonal_difference(int, int, int **);
 

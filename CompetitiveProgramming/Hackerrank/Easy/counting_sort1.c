@@ -1,6 +1,9 @@
+// Name: Counting Sort 1
+// Topics: Algorithms, Sorting
+
 #include <stdio.h>
 #include <stdlib.h>
-#include "tools/hackerrank.h"
+#include <hackerrank.h>
 
 int *counting_sort(int, int *, int *);
 

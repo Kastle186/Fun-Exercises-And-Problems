@@ -1,6 +1,9 @@
+// Name: Balanced Brackets
+// Topics: Data Structures, Stacks
+
 #include <iostream>
 #include <stack>
-#include "tools/hackerrank.hpp"
+#include <hackerrank.hpp>
 
 std::string is_balanced(std::string);
 

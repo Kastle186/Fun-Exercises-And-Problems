@@ -1,6 +1,9 @@
+// Name: Caesar Cipher
+// Topics: Algorithms, Strings
+
 #include <stdio.h>
 #include <ctype.h>
-#include "tools/hackerrank.h"
+#include <hackerrank.h>
 
 #define NUM_ALPHABET_LETTERS 26
 

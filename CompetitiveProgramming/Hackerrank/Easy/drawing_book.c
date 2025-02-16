@@ -1,5 +1,8 @@
+// Name: Drawing Book
+// Topics: Algorithms, Implementation
+
 #include <stdio.h>
-#include "tools/hackerrank.h"
+#include <hackerrank.h>
 
 int page_count(int, int);
 

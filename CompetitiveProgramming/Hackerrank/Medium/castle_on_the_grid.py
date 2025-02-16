@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
 
+# Name: Castle on the Grid
+# Topics: Data Structures, Queues
+
 from collections import deque
 
 def main():
