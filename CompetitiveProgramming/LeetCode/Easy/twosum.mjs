@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-// Name: Two Sum
+// Name: 1. Two Sum
 // Topics: Array, Hash Table
 // Companies:
 // - Yahoo
