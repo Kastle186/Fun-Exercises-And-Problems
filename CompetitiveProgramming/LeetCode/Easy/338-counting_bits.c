@@ -1,4 +1,4 @@
-// Name: Counting Bits
+// Name: 338. Counting Bits
 // Topics: Dynamic Programming, Bit Manipulation
 // Companies:
 // - Nvidia

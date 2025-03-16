@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-# Name: Asteroid Collision
+# Name: 735. Asteroid Collision
 # Topics: Array, Stack, Simulation
 # Companies:
 # - Myntra

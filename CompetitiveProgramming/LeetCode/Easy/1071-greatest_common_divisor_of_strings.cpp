@@ -1,4 +1,4 @@
-// Name: Greatest Common Divisor of Strings
+// Name: 1071. Greatest Common Divisor of Strings
 // Topics: Math, String
 // Companies:
 // - Infosys

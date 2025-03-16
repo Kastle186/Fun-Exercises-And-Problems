@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-# Name: Total Cost to Hire K Workers
+# Name: 2462. Total Cost to Hire K Workers
 # Topics: Array, Two Pointers, Heap (Priority Queue), Simulation
 # Companies:
 # - MathWorks

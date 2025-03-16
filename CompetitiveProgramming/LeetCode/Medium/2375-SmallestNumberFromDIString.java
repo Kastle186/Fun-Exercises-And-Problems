@@ -1,4 +1,4 @@
-// Name: Construct Smallest Number From DI String
+// Name: 2375. Construct Smallest Number From DI String
 // Topics: String, Backtracking, Stack, Greedy
 // Companies:
 // - Josh Technology
