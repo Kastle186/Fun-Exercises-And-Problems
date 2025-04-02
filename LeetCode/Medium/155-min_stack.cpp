@@ -44,7 +44,7 @@ public:
     {
         contents.push_back(val);
 
-        if (mins_history.empty() || mins_history.back() > val)
+        if (mins_history.empty() || mins_history.back() >= val)
             mins_history.push_back(val);
     }
 
