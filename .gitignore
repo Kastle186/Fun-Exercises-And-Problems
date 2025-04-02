@@ -16,4 +16,5 @@
 *.beam
 *.in
 *.txt
+*.class
 .DS_Store
