@@ -1,5 +1,5 @@
-// Name:
-// Topics:
+// Name: 1534. Count Good Triplets
+// Topics: Array, Enumeration
 
 #include <stdio.h>
 #include <stdlib.h>
