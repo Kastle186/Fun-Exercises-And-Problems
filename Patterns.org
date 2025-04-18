@@ -1,0 +1,253 @@
+* Data Structures and Algorithms Patterns
+
+https://www.youtube.com/watch?v=RYT08CaYq6A
+
+** Linear Structure Problems
+
+- Arrays
+- Linked Lists
+- Strings
+
+*** Two Pointers
+
+This pattern greatly simplifies traversing a linear data structure while doing stuff
+to process it.
+
+- Brute Force is usually *O(N^2)*
+- Two Pointers usually makes it *O(N)*
+
+The pointers can either go in the same direction, or opposite directions. They are
+usually used when scanning the data in a single pass.
+
+**** Same Directions (Fast and Slow Pointer)
+
+- Check for cycles in a list
+- Find the middle element
+- Find key elements
+
+**** Opposite Directions
+
+- Find pairs
+- Compare elements from opposite ends of the data structure (e.g. palindromes)
+- Find a pair that sums to a certain result within a sorted array
+
+*** Sliding Window
+
+This pattern is like an extension of the "Two Pointers" pattern above, but instead
+of working with the elements separately, the pointers are used to keep track of a
+full range/subset/etc.
+
+_Examples_:
+
+- Maximize the length of a substring/subset/etc while fulfilling a certain condition
+  (e.g. _Longest Substring Without Repeating Characters_)
+- Keep a certain sum while traversing the list
+
+This pattern is commonly used with *Hash Maps* to keep track of certain condition(s)
+while analyzing the elements.
+
+*** Binary Search
+
+This pattern is an essential algorithm to find a target value in a sorted
+array/list/sequence/range/etc.
+
+In an abstract way, it's another expansion of the "Two Pointers" pattern.
+
+- Brute Force is usually *O(N)*
+- Binary Search makes it *O(log N)*
+
+Something that makes this pattern very powerful is that it doesn't have to be
+a tangible list. It can be applied to any abstract sequence as well, as long as
+it is defined by, or follows a monotonic mathematical function.
+
+_Template_:
+
+#+begin_src python
+  def binary_search(array: list[int], target: int) -> int:
+      left = 0
+      right = len(array) - 1
+      first_true_index = -1
+
+      while left <= right:
+          mid = (left + right) // 2
+
+          if feasible(mid):
+              first_true_index = mid
+              right = mid - 1
+          else:
+              left = mid + 1
+
+      return first_true_index
+#+end_src
+
+** Non-Linear Structure Problems
+
+- Trees
+- Graphs
+
+A Tree can also be seen as a Graph with no cycles :)
+
+*** Breadth-First Search (BFS)
+
+This pattern is commonly used to explore the nodes in a graph of tree in a level
+by level fashion. In other words, it explores a node, then all of its neighbors,
+before moving on to their neighbors' neighbors and so on.
+
+At its core, it uses a Queue (FIFO DS) to process the nodes. This algorithm is
+usually the better option for "shortest path" type of problems.
+
+_Template_:
+
+#+begin_src python
+  from collections import deque
+
+  def bfs(root):
+      queue = deque([root])
+
+      while queue:
+          node = queue.popleft()
+
+          for child in node.children:
+              if OK(child):
+                  return FOUND(child)
+              queue.append(child)
+
+      return NOT_FOUND
+#+end_src
+
+*** Depth-First Search (DFS)
+
+This pattern differs from its sibling, Breadth First Search, in the sense that it
+explores all nodes in a graph in a branch by branch, or path by path fashion. In other
+words, it keeps going down/deep until the end of that path.
+
+At its core, it uses a Stack (LIFO DS) to process the nodes, whether its a literal
+stack or the call stack, depending on whether the implementation is iterative for
+the former, or recursive for the latter.
+
+_Examples_:
+
+- Explore/Find all paths
+- Check all possible configurations
+- Search for a specific condition deep in the structure
+- Detecting cycles in a graph
+
+_Templates_:
+
+**** Tree DFS
+
+#+begin_src python
+  def dfs(root, target):
+      if root is None:
+          return None
+
+      if root.val == target:
+          return root
+
+      if root.left is not None:
+          return dfs(root.left, target)
+
+      return dfs(root.right, target)
+#+end_src
+
+**** Graph DFS
+
+#+begin_src python
+  def dfs(root, visited):
+      for neighbor in get_neighbors(root):
+          if neighbor in visited:
+              continue
+
+          visited.add(neighbor)
+          dfs(neighbor, visited)
+#+end_src
+
+*** Backtracking
+
+This pattern can be considered in a sense, an extension of the Depth-First Search
+described in the section above. The main difference is that DFS is used on a pre-built
+concrete structure. Backtracking on the other hand, works on abstract structures
+built or imagined dynamically at runtime, like decision trees and combinatorics.
+
+Its average running time is *O(2^N)*
+
+_Template_:
+
+#+begin_src python
+  answer = []
+
+  def backtracking_dfs(start_index, path, [...additional states]):
+      if is_leaf(start_index):
+          answer.append(path[:])
+          return
+
+      for edge in get_edges(start_index, [...additional states]):
+          if not is_valid(edge):
+              continue
+
+          path.add(edge)
+
+          if additional states:
+              update(...additional states)
+
+          backtracking_dfs(start_index + len(edge), path, [...additional states])
+          revert(...additional states)
+          path.pop()
+
+#+end_src
+
+*** Priority Queue / Heap
+
+Every time a problem requires you to find the top K elements, Kth most element,
+and any of their different flavors, the answer is very most likely achieved with
+this pattern.
+
+Heaps are a special kind of tree where elements are organized in a specific way:
+
+- _Min Heap_: The top-most element is the smallest one and all children are larger
+            than their parents.
+
+- _Max Heap_: The top-most element is the largest one and all children are smaller
+            than their parents.
+
+Counterintuitive, we use a Min Heap for the Kth largest value(s) and a Max Heap
+for the Kth smallest values. For example:
+
+- _Find the 3 smallest elements in a list_
+
+  We add the first three elements to the max heap. Then, for the remaining ones,
+  if they are larger than the root, then by definition they can't be "smallest",
+  so we ignore them. This way, we'll only heapify with certain elements, rather
+  than all of them. At the end, the heap contains the answer.
+
+The average running times of heaps are:
+
+- *O(1)* to retrieve the smallest/largest element
+- *O(log N)* for inserting and deleting elements
+
+*** Dynamic Programming
+
+One of the most dreaded patterns of all: The feared Dynamic Programming.
+
+To put it in the simplest of terms, this pattern consists in breaking down the
+problem into smaller subproblems, and storing the intermediate results of overlapping
+subproblems to avoid recalculating them. The simplicity of this explanation goes away
+because there is a vast amount of nuance as to how these intermediate results
+are calculated, stored, and retrieved, and it can vary greatly from problem to problem.
+
+However, there are two major ways of doing it:
+- Top-Down
+- Bottom-Up
+
+**** Top-Down
+
+Start from the main problem, and recurse as it is broken down into smaller
+subproblems.
+
+A good tip is to see this approach as Backtracking + Memoization.
+
+**** Bottom-Up
+
+Start from the smallest subproblem, and gradually build up until the main problem
+is reached. As opposed to the Top-Down approach, Bottom-Up usually relies on using
+a table rather than recursion.
