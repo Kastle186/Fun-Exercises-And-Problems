@@ -39,6 +39,7 @@ func main() {
 	nums1 := []int { 2, 3, 1, 1, 4 }
 	nums2 := []int { 3, 2, 1, 0, 4 }
 
+	fmt.Println("55. Jump Game I")
 	fmt.Println(canJump(nums1))
 	fmt.Println(canJump(nums2))
 }
