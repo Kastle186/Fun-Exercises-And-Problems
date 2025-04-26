@@ -18,6 +18,7 @@ public class Solution
         String smolNum_2 = smallestNumber(diPattern_2);
         String smolNum_3 = smallestNumber(diPattern_3);
 
+        System.out.println("2375. Construct Smallest Number From DI String");
         System.out.println(smolNum_1);
         System.out.println(smolNum_2);
         System.out.println(smolNum_3);
