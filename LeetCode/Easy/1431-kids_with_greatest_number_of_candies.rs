@@ -12,6 +12,7 @@ fn main()
     let most_candies2: Vec<bool> = kids_with_candies(candies2, 1);
     let most_candies3: Vec<bool> = kids_with_candies(candies3, 10);
 
+    println!("1431. Kids with the Greatest Number of Candies");
     println!("{:?}", most_candies1);
     println!("{:?}", most_candies2);
     println!("{:?}", most_candies3);
