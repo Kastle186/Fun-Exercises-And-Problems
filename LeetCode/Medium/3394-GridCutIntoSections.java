@@ -33,6 +33,7 @@ class GridCutIntoSections
             {3, 2, 4, 4}
         };
 
+        System.out.println("3394. Check if Grid can be Cut into Sections");
         System.out.println(checkValidCuts(5, grid1));
         System.out.println(checkValidCuts(4, grid2));
         System.out.println(checkValidCuts(4, grid3));
