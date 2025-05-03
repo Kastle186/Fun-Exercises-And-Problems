@@ -12,27 +12,35 @@
 
 'use strict';
 
-function nQueensHelperDbg(row, n, cols, ascDiagDp, descDiagDp, result) {
+function nQueensHelperDbg(row, n, cols, ascDiagDp, descDiagDp, result)
+{
     console.log(`Entering row ${row}, current result: ${result}`);
 
-    // Base case: We've reached a valid solution
-    if (row == n) {
+    // Base case: We've reached a new solution to count.
+    if (row == n)
+    {
         console.log("Found a valid solution!");
         return result + 1;
     }
 
-    for (let col = 0; col < n; col++) {
+    for (let col = 0; col < n; col++)
+    {
         let ascDiagIndex = row + col;
         let descDiagIndex = row - col + n;
 
+        // If any either this column, or any of the diagonals are already attacked
+        // on this position, then ignore it and move to the next.
+
         console.log(`Trying position row ${row}, col ${col}`);
 
-        if (cols[col] == 1 || ascDiagDp[ascDiagIndex] == 1 || descDiagDp[descDiagIndex] == 1) {
+        if (cols[col] == 1 || ascDiagDp[ascDiagIndex] == 1 || descDiagDp[descDiagIndex] == 1)
+        {
             console.log(`Position row ${row}, col ${col} is under attack, skipping`);
             continue;
         }
 
-        // Place queen
+        // Set a queen in the current position.
+
         cols[col] = 1;
         ascDiagDp[ascDiagIndex] = 1;
         descDiagDp[descDiagIndex] = 1;
@@ -40,10 +48,10 @@ function nQueensHelperDbg(row, n, cols, ascDiagDp, descDiagDp, result) {
         console.log(`Placed queen at row ${row}, col ${col}`);
         console.log(`Board state: cols=${cols}, ascDiagDp=${ascDiagDp}, descDiagDp=${descDiagDp}`);
 
-        // Recurse
+        // Recurse for the next row.
         result = nQueensHelper(row + 1, n, cols, ascDiagDp, descDiagDp, result);
 
-        // Backtrack
+        // Remove the last placed queen to try out another combination.
         cols[col] = 0;
         ascDiagDp[ascDiagIndex] = 0;
         descDiagDp[descDiagIndex] = 0;
