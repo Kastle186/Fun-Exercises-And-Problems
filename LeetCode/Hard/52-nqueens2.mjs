@@ -12,6 +12,50 @@
 
 'use strict';
 
+function nQueensHelperDbg(row, n, cols, ascDiagDp, descDiagDp, result) {
+    console.log(`Entering row ${row}, current result: ${result}`);
+
+    // Base case: We've reached a valid solution
+    if (row == n) {
+        console.log("Found a valid solution!");
+        return result + 1;
+    }
+
+    for (let col = 0; col < n; col++) {
+        let ascDiagIndex = row + col;
+        let descDiagIndex = row - col + n;
+
+        console.log(`Trying position row ${row}, col ${col}`);
+
+        if (cols[col] == 1 || ascDiagDp[ascDiagIndex] == 1 || descDiagDp[descDiagIndex] == 1) {
+            console.log(`Position row ${row}, col ${col} is under attack, skipping`);
+            continue;
+        }
+
+        // Place queen
+        cols[col] = 1;
+        ascDiagDp[ascDiagIndex] = 1;
+        descDiagDp[descDiagIndex] = 1;
+
+        console.log(`Placed queen at row ${row}, col ${col}`);
+        console.log(`Board state: cols=${cols}, ascDiagDp=${ascDiagDp}, descDiagDp=${descDiagDp}`);
+
+        // Recurse
+        result = nQueensHelper(row + 1, n, cols, ascDiagDp, descDiagDp, result);
+
+        // Backtrack
+        cols[col] = 0;
+        ascDiagDp[ascDiagIndex] = 0;
+        descDiagDp[descDiagIndex] = 0;
+
+        console.log(`Backtracking from row ${row}, col ${col}`);
+        console.log(`Board state after backtracking: cols=${cols}, ascDiagDp=${ascDiagDp}, descDiagDp=${descDiagDp}`);
+    }
+
+    console.log(`Exiting row ${row}, current result: ${result}`);
+    return result;
+}
+
 function nQueensHelper(row, n, cols, ascDiagDp, descDiagDp, result)
 {
     // Base case: We've reached a new solution to count.

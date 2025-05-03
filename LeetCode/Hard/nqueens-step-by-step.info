@@ -1,0 +1,204 @@
+Entering row 0, current result: 0
+Trying position row 0, col 0
+Placed queen at row 0, col 0
+Board state: cols=1,0,0,0, ascDiagDp=1,0,0,0,0,0,0,0, descDiagDp=0,0,0,0,1,0,0,0
+Entering row 1, current result: 0
+Trying position row 1, col 0
+Position row 1, col 0 is under attack, skipping
+Trying position row 1, col 1
+Position row 1, col 1 is under attack, skipping
+Trying position row 1, col 2
+Placed queen at row 1, col 2
+Board state: cols=1,0,1,0, ascDiagDp=1,0,0,1,0,0,0,0, descDiagDp=0,0,0,1,1,0,0,0
+Entering row 2, current result: 0
+Trying position row 2, col 0
+Position row 2, col 0 is under attack, skipping
+Trying position row 2, col 1
+Position row 2, col 1 is under attack, skipping
+Trying position row 2, col 2
+Position row 2, col 2 is under attack, skipping
+Trying position row 2, col 3
+Position row 2, col 3 is under attack, skipping
+Exiting row 2, current result: 0
+Backtracking from row 1, col 2
+Board state after backtracking: cols=1,0,0,0, ascDiagDp=1,0,0,0,0,0,0,0, descDiagDp=0,0,0,0,1,0,0,0
+Trying position row 1, col 3
+Placed queen at row 1, col 3
+Board state: cols=1,0,0,1, ascDiagDp=1,0,0,0,1,0,0,0, descDiagDp=0,0,1,0,1,0,0,0
+Entering row 2, current result: 0
+Trying position row 2, col 0
+Position row 2, col 0 is under attack, skipping
+Trying position row 2, col 1
+Placed queen at row 2, col 1
+Board state: cols=1,1,0,1, ascDiagDp=1,0,0,1,1,0,0,0, descDiagDp=0,0,1,0,1,1,0,0
+Entering row 3, current result: 0
+Trying position row 3, col 0
+Position row 3, col 0 is under attack, skipping
+Trying position row 3, col 1
+Position row 3, col 1 is under attack, skipping
+Trying position row 3, col 2
+Position row 3, col 2 is under attack, skipping
+Trying position row 3, col 3
+Position row 3, col 3 is under attack, skipping
+Exiting row 3, current result: 0
+Backtracking from row 2, col 1
+Board state after backtracking: cols=1,0,0,1, ascDiagDp=1,0,0,0,1,0,0,0, descDiagDp=0,0,1,0,1,0,0,0
+Trying position row 2, col 2
+Position row 2, col 2 is under attack, skipping
+Trying position row 2, col 3
+Position row 2, col 3 is under attack, skipping
+Exiting row 2, current result: 0
+Backtracking from row 1, col 3
+Board state after backtracking: cols=1,0,0,0, ascDiagDp=1,0,0,0,0,0,0,0, descDiagDp=0,0,0,0,1,0,0,0
+Exiting row 1, current result: 0
+Backtracking from row 0, col 0
+Board state after backtracking: cols=0,0,0,0, ascDiagDp=0,0,0,0,0,0,0,0, descDiagDp=0,0,0,0,0,0,0,0
+Trying position row 0, col 1
+Placed queen at row 0, col 1
+Board state: cols=0,1,0,0, ascDiagDp=0,1,0,0,0,0,0,0, descDiagDp=0,0,0,1,0,0,0,0
+Entering row 1, current result: 0
+Trying position row 1, col 0
+Position row 1, col 0 is under attack, skipping
+Trying position row 1, col 1
+Position row 1, col 1 is under attack, skipping
+Trying position row 1, col 2
+Position row 1, col 2 is under attack, skipping
+Trying position row 1, col 3
+Placed queen at row 1, col 3
+Board state: cols=0,1,0,1, ascDiagDp=0,1,0,0,1,0,0,0, descDiagDp=0,0,1,1,0,0,0,0
+Entering row 2, current result: 0
+Trying position row 2, col 0
+Placed queen at row 2, col 0
+Board state: cols=1,1,0,1, ascDiagDp=0,1,1,0,1,0,0,0, descDiagDp=0,0,1,1,0,0,1,0
+Entering row 3, current result: 0
+Trying position row 3, col 0
+Position row 3, col 0 is under attack, skipping
+Trying position row 3, col 1
+Position row 3, col 1 is under attack, skipping
+Trying position row 3, col 2
+Placed queen at row 3, col 2
+Board state: cols=1,1,1,1, ascDiagDp=0,1,1,0,1,1,0,0, descDiagDp=0,0,1,1,0,1,1,0
+Entering row 4, current result: 0
+Found a valid solution!
+Backtracking from row 3, col 2
+Board state after backtracking: cols=1,1,0,1, ascDiagDp=0,1,1,0,1,0,0,0, descDiagDp=0,0,1,1,0,0,1,0
+Trying position row 3, col 3
+Position row 3, col 3 is under attack, skipping
+Exiting row 3, current result: 1
+Backtracking from row 2, col 0
+Board state after backtracking: cols=0,1,0,1, ascDiagDp=0,1,0,0,1,0,0,0, descDiagDp=0,0,1,1,0,0,0,0
+Trying position row 2, col 1
+Position row 2, col 1 is under attack, skipping
+Trying position row 2, col 2
+Position row 2, col 2 is under attack, skipping
+Trying position row 2, col 3
+Position row 2, col 3 is under attack, skipping
+Exiting row 2, current result: 1
+Backtracking from row 1, col 3
+Board state after backtracking: cols=0,1,0,0, ascDiagDp=0,1,0,0,0,0,0,0, descDiagDp=0,0,0,1,0,0,0,0
+Exiting row 1, current result: 1
+Backtracking from row 0, col 1
+Board state after backtracking: cols=0,0,0,0, ascDiagDp=0,0,0,0,0,0,0,0, descDiagDp=0,0,0,0,0,0,0,0
+Trying position row 0, col 2
+Placed queen at row 0, col 2
+Board state: cols=0,0,1,0, ascDiagDp=0,0,1,0,0,0,0,0, descDiagDp=0,0,1,0,0,0,0,0
+Entering row 1, current result: 1
+Trying position row 1, col 0
+Placed queen at row 1, col 0
+Board state: cols=1,0,1,0, ascDiagDp=0,1,1,0,0,0,0,0, descDiagDp=0,0,1,0,0,1,0,0
+Entering row 2, current result: 1
+Trying position row 2, col 0
+Position row 2, col 0 is under attack, skipping
+Trying position row 2, col 1
+Position row 2, col 1 is under attack, skipping
+Trying position row 2, col 2
+Position row 2, col 2 is under attack, skipping
+Trying position row 2, col 3
+Placed queen at row 2, col 3
+Board state: cols=1,0,1,1, ascDiagDp=0,1,1,0,0,1,0,0, descDiagDp=0,0,1,1,0,1,0,0
+Entering row 3, current result: 1
+Trying position row 3, col 0
+Position row 3, col 0 is under attack, skipping
+Trying position row 3, col 1
+Placed queen at row 3, col 1
+Board state: cols=1,1,1,1, ascDiagDp=0,1,1,0,1,1,0,0, descDiagDp=0,0,1,1,0,1,1,0
+Entering row 4, current result: 1
+Found a valid solution!
+Backtracking from row 3, col 1
+Board state after backtracking: cols=1,0,1,1, ascDiagDp=0,1,1,0,0,1,0,0, descDiagDp=0,0,1,1,0,1,0,0
+Trying position row 3, col 2
+Position row 3, col 2 is under attack, skipping
+Trying position row 3, col 3
+Position row 3, col 3 is under attack, skipping
+Exiting row 3, current result: 2
+Backtracking from row 2, col 3
+Board state after backtracking: cols=1,0,1,0, ascDiagDp=0,1,1,0,0,0,0,0, descDiagDp=0,0,1,0,0,1,0,0
+Exiting row 2, current result: 2
+Backtracking from row 1, col 0
+Board state after backtracking: cols=0,0,1,0, ascDiagDp=0,0,1,0,0,0,0,0, descDiagDp=0,0,1,0,0,0,0,0
+Trying position row 1, col 1
+Position row 1, col 1 is under attack, skipping
+Trying position row 1, col 2
+Position row 1, col 2 is under attack, skipping
+Trying position row 1, col 3
+Position row 1, col 3 is under attack, skipping
+Exiting row 1, current result: 2
+Backtracking from row 0, col 2
+Board state after backtracking: cols=0,0,0,0, ascDiagDp=0,0,0,0,0,0,0,0, descDiagDp=0,0,0,0,0,0,0,0
+Trying position row 0, col 3
+Placed queen at row 0, col 3
+Board state: cols=0,0,0,1, ascDiagDp=0,0,0,1,0,0,0,0, descDiagDp=0,1,0,0,0,0,0,0
+Entering row 1, current result: 2
+Trying position row 1, col 0
+Placed queen at row 1, col 0
+Board state: cols=1,0,0,1, ascDiagDp=0,1,0,1,0,0,0,0, descDiagDp=0,1,0,0,0,1,0,0
+Entering row 2, current result: 2
+Trying position row 2, col 0
+Position row 2, col 0 is under attack, skipping
+Trying position row 2, col 1
+Position row 2, col 1 is under attack, skipping
+Trying position row 2, col 2
+Placed queen at row 2, col 2
+Board state: cols=1,0,1,1, ascDiagDp=0,1,0,1,1,0,0,0, descDiagDp=0,1,0,0,1,1,0,0
+Entering row 3, current result: 2
+Trying position row 3, col 0
+Position row 3, col 0 is under attack, skipping
+Trying position row 3, col 1
+Position row 3, col 1 is under attack, skipping
+Trying position row 3, col 2
+Position row 3, col 2 is under attack, skipping
+Trying position row 3, col 3
+Position row 3, col 3 is under attack, skipping
+Exiting row 3, current result: 2
+Backtracking from row 2, col 2
+Board state after backtracking: cols=1,0,0,1, ascDiagDp=0,1,0,1,0,0,0,0, descDiagDp=0,1,0,0,0,1,0,0
+Trying position row 2, col 3
+Position row 2, col 3 is under attack, skipping
+Exiting row 2, current result: 2
+Backtracking from row 1, col 0
+Board state after backtracking: cols=0,0,0,1, ascDiagDp=0,0,0,1,0,0,0,0, descDiagDp=0,1,0,0,0,0,0,0
+Trying position row 1, col 1
+Placed queen at row 1, col 1
+Board state: cols=0,1,0,1, ascDiagDp=0,0,1,1,0,0,0,0, descDiagDp=0,1,0,0,1,0,0,0
+Entering row 2, current result: 2
+Trying position row 2, col 0
+Position row 2, col 0 is under attack, skipping
+Trying position row 2, col 1
+Position row 2, col 1 is under attack, skipping
+Trying position row 2, col 2
+Position row 2, col 2 is under attack, skipping
+Trying position row 2, col 3
+Position row 2, col 3 is under attack, skipping
+Exiting row 2, current result: 2
+Backtracking from row 1, col 1
+Board state after backtracking: cols=0,0,0,1, ascDiagDp=0,0,0,1,0,0,0,0, descDiagDp=0,1,0,0,0,0,0,0
+Trying position row 1, col 2
+Position row 1, col 2 is under attack, skipping
+Trying position row 1, col 3
+Position row 1, col 3 is under attack, skipping
+Exiting row 1, current result: 2
+Backtracking from row 0, col 3
+Board state after backtracking: cols=0,0,0,0, ascDiagDp=0,0,0,0,0,0,0,0, descDiagDp=0,0,0,0,0,0,0,0
+Exiting row 0, current result: 2
+2
+1
