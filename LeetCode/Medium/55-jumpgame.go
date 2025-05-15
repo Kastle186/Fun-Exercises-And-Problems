@@ -1,5 +1,5 @@
 // Name: 55. Jump Game I
-// Topics:
+// Topics: Array, Dynamic Programming, Greedy
 // Companies:
 // - Verily
 // - MakeMyTrip
